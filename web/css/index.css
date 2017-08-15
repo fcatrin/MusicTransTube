@@ -3,6 +3,10 @@
 	margin-bottom: 20px;
 }
 
-#videoContainer {
+#videoContainer, #buttons {
+	text-align: center;
 }
 
+#loopText {
+	color: rgba(192, 192, 192, 0.8);
+}
