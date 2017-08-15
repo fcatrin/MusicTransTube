@@ -12,15 +12,23 @@
 	<div id="video">
 		<div id="videoContainer">
 			<div id="videoDiv">Loading...</div>
-			<div id="loopText"></div>
 		</div>
 	</div>
 	<div id="buttons">
-		<button id="btnBack">&lt;&lt;</button>
-		<button id="btnPlay">Play</button>
-		<button id="btnForward">&gt;&gt;</button>
-		<button id="btnLoopStart">[ LOOP</button>
-		<button id="btnLoopEnd">LOOP ]</button>
+		<div id="panelNavigation">
+			<div id="loopText"></div>
+			<div>
+				<button id="btnBack">&lt;&lt;</button>
+				<button id="btnPlay">Play</button>
+				<button id="btnForward">&gt;&gt;</button>
+				<button id="btnLoopStart">[ LOOP</button>
+				<button id="btnLoopEnd">LOOP ]</button>
+			</div>
+		</div>
+		<div id="panelSpeed">
+			<div id="speedText"></div>
+			<span id="rateButtons"></span>
+		</div>
 	</div>
 </div>
 </body>

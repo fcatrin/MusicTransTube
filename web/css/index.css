@@ -7,6 +7,10 @@
 	text-align: center;
 }
 
-#loopText {
-	color: rgba(192, 192, 192, 0.8);
+#loopText, #speedText {
+	color: rgba(255, 255, 255, 0.8);
+}
+
+#panelNavigation, #panelSpeed {
+	margin-top: 20pt;
 }
