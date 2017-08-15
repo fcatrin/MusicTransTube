@@ -28,6 +28,19 @@ function onPlayerReady(event) {
 	displayLoopInfo();
 	
 	setInterval(updatePlayerInfo, 250);
+	
+	$(document).keypress(onKeyPress);
+}
+
+function onKeyPress(e) {
+	switch (e.which) {
+	case 32  : onPlayPausePressed();   break;
+	case 113 : onLoopStartPressed();   break;
+	case 119 : onLoopEndPressed();     break;
+	case 97  : onMoveBackPressed();    break;
+	case 115 : onMoveForwardPressed(); break;
+	}
+	console.log(e.which);
 }
 
 function onPlayerStateChange(event) {
@@ -36,7 +49,6 @@ function onPlayerStateChange(event) {
 
 function updatePlayerInfo() {
 	var position = player.getCurrentTime();
-	console.log("p:" + position + ", s:" + loopStart + ", e:" + loopEnd);
 	if (loopStart >= 0 && loopEnd >= 0) {
 		if (position >= loopEnd) {
 			player.seekTo(loopStart, true);
