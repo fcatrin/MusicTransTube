@@ -14,3 +14,7 @@
 #panelNavigation, #panelSpeed {
 	margin-top: 20pt;
 }
+
+#panelSpeed {
+	display: none;
+}

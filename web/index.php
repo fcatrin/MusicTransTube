@@ -5,6 +5,7 @@
 <link rel="stylesheet" type="text/css" href="css/index.css" />
 <script src="http://www.youtube.com/iframe_api" type="text/javascript"></script>
 <script src="js/lib/jquery.leanModal.min.js" type="text/javascript"></script>
+<script src="js/mutv.js" type="text/javascript"></script>
 <script src="js/index.js" type="text/javascript"></script>
 </head>
 <body>
@@ -18,11 +19,11 @@
 		<div id="panelNavigation">
 			<div id="loopText"></div>
 			<div>
-				<button id="btnBack">&lt;&lt;</button>
-				<button id="btnPlay">Play</button>
-				<button id="btnForward">&gt;&gt;</button>
-				<button id="btnLoopStart">[ LOOP</button>
-				<button id="btnLoopEnd">LOOP ]</button>
+				<button id="btnBack">A<br />&lt;&lt;</button>
+				<button id="btnPlay">SPC<br />Play</button>
+				<button id="btnForward">S<br />&gt;&gt;</button>
+				<button id="btnLoopStart">Q<br />[- LOOP</button>
+				<button id="btnLoopEnd">W<br />LOOP -]</button>
 			</div>
 		</div>
 		<div id="panelSpeed">

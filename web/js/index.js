@@ -114,7 +114,7 @@ function onMoveForwardPressed() {
 function displayLoopInfo() {
 	var loopText = "Loop [ ";
 	if (loopStart >= 0) {
-		loopText += loopStart;
+		loopText += seconds2text(loopStart);
 	} else {
 		loopText += "N";
 	}
@@ -122,7 +122,7 @@ function displayLoopInfo() {
 	loopText += " -> ";
 	
 	if (loopEnd >= 0) {
-		loopText += loopEnd;
+		loopText += seconds2text(loopEnd);
 	} else {
 		loopText += "N";
 	}
@@ -140,11 +140,12 @@ function updatePlaybackRates() {
 		var rate = rates[i];
 		var rateText = rate == 1? "Normal" : ((rate * 100) + '%');
 		rateNames[i] = rateText;
-		var button = tag('button', (i+1) + ': ' + rateText, 'btnRate', 'btnRate-' + i); 
-		html += button;
+		var button = tag('button', (i+1) + '<br/>' + rateText, 'btnRate', 'btnRate-' + i); 
+		html += button + ' ';
 	}
 	$('#rateButtons').html(html);
 	$('.btnRate').click(onButtonRatePressed);
+	$('#panelSpeed').show();
 }
 
 function getIndex(id) {
