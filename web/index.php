@@ -24,6 +24,7 @@
 				<button id="btnForward">S<br />&gt;&gt;</button>
 				<button id="btnLoopStart">Q<br />[- LOOP</button>
 				<button id="btnLoopEnd">W<br />LOOP -]</button>
+				<button id="btnLoopEnd">X<br />RESET</button>
 			</div>
 		</div>
 		<div id="panelSpeed">

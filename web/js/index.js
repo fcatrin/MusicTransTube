@@ -28,6 +28,8 @@ function onPlayerReady(event) {
 	$('#btnLoopStart').click(onLoopStartPressed);
 	$('#btnLoopEnd')  .click(onLoopEndPressed);
 	
+	$('#btnReset')  .click(onResetPressed);
+	
 	displayLoopInfo();
 	displaySpeedInfo('Normal');
 	
@@ -49,6 +51,7 @@ function onKeyPress(e) {
 		case 119 : onLoopEndPressed();     break;
 		case 97  : onMoveBackPressed();    break;
 		case 115 : onMoveForwardPressed(); break;
+		case 120 : onResetPressed(); break;
 		}
 	}
 	console.log(e.which);
@@ -111,6 +114,13 @@ function onMoveForwardPressed() {
 	player.seekTo(position, true);
 }
 
+function onResetPressed() {
+	loopStart = -1;
+	loopEnd = -1;
+	displayLoopInfo();
+	setSpeed(-1);
+}
+
 function displayLoopInfo() {
 	var loopText = "Loop [ ";
 	if (loopStart >= 0) {
@@ -158,6 +168,12 @@ function onButtonRatePressed() {
 }
 
 function setSpeed(index) {
+	if (index == -1) {
+		for(var i=0; index < 0 && i<rates.length; i++) {
+			if (rates[i] == 1) index = i;
+		}
+		if (index < 0) index = 0;
+	}
 	var rate = rates[index];
 	player.setPlaybackRate(rate);
 	displaySpeedInfo(rateNames[index]);
