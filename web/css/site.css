@@ -1,0 +1,211 @@
+html { 
+	padding:0px;
+	margin:0px;
+}
+
+BODY, SELECT, INPUT, TD, TH, A {
+	font-family: "Rambla";
+	font-size: 10pt;
+	color: #333333;
+}
+
+BODY {
+	background: #222222;
+}
+
+
+A {
+	color : #005484;
+}
+
+TH {
+	text-align-center;
+	border: 1px solid #C0C0C0;
+}
+
+BODY {
+	margin:0px;
+	padding:0px;
+	text-align: center;
+}
+
+#box {
+	width:1024px;
+	margin: 0px auto;
+	padding:0px;
+	text-align: left;
+}
+
+
+DIV.actions {
+	text-align: center;
+	margin-top: 10pt;
+}
+
+
+DIV.roundbox {
+	background: none repeat scroll 0 0 #F0F0F0;
+	border: 1px solid #C0C0C0;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: -1px 1px 1px 1px rgba(0, 0, 0, 0.3);
+    color: #FFFFFF;
+    padding: 3px 10px;
+}
+
+
+#lean_overlay {
+    position: fixed;
+    z-index:100;
+    top: 0px;
+    left: 0px;
+    height:100%;
+    width:100%;
+    background: #000;
+    display: none;
+}
+
+img.channelLogo {
+	width: 60px;
+	height: 60px;
+	cursor: pointer;
+}
+
+#channel {
+	height: 60px;
+	background: #404040;
+	padding: 10px;
+}
+
+#channelLogo {
+	float:left;
+}
+
+#channelInfo {
+	padding-left: 80px;
+	height: 60px;
+}
+
+#channelTitle {
+	color: #E0E0E0;
+	font-weight:bold;
+	font-size: 18pt;	
+}
+
+#channelDescription {
+	color: #A0A0A0;
+	font-size: 16pt;	
+}
+
+
+/* awesome buttons 
+http://elccore.s3.amazonaws.com/awesome_buttons/demo.html
+*/
+
+
+button.awesome, input.awesome, a.button.awesome {
+    background-color: #111111;
+}
+button.awesome, input.awesome, a.button.awesome {
+    -moz-font-feature-settings: inherit;
+    -moz-font-language-override: inherit;
+    -moz-user-select: none;
+    background-image: url("/images/awesome-overlay-sprite.png");
+    background-position: 0 0;
+    background-repeat: repeat-x;
+    border: 0 none;
+    border-radius: 5px 5px 5px 5px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: inherit;
+    font-size: 13px;
+    font-size-adjust: inherit;
+    font-stretch: inherit;
+    font-style: normal;
+    font-variant: inherit;
+    font-weight: bold;
+    line-height: 1;
+    padding: 5px 10px 6px;
+    position: relative;
+    text-decoration: none;
+    text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.25), -2px 0 1px rgba(0, 0, 0, 0.25);
+    vertical-align: middle;
+}
+button.awesome:hover, input.awesome:hover, a.button.awesome:hover {
+    background-position: 0 -50px;
+    color: #FFFFFF;
+}
+button.awesome:active, input.awesome:active, a.button.awesome:active {
+    background-position: 0 100%;
+}
+button.awesome.small, input.awesome.small, a.button.awesome.small {
+    font-size: 10px;
+    padding: 4px 7px 5px;
+}
+button.awesome.small:active, input.awesome.small:active, a.button.awesome.small:active {
+    padding: 5px 7px 4px;
+}
+/*
+button.awesome.medium, input.awesome.medium, a.button.awesome.medium {
+}
+*/
+button.awesome.medium:active, input.awesome.medium:active, a.button.awesome.medium:active {
+    padding: 6px 10px 5px;
+}
+button.awesome.large, input.awesome.large, a.button.awesome.large {
+    font-size: 14px;
+    padding: 8px 14px 9px;
+}
+button.awesome.large:active, input.awesome.large:active, a.button.awesome.large:active {
+    padding: 9px 14px 8px;
+}
+
+a.button.awesome.awchannel {
+	background-color: #42340C;
+	font-weight: normal;
+	color: #E0E0E0;
+}
+
+#channelMenu {
+	position: relative;
+}
+#channelSelector {
+	position: absolute;
+	/*float: right; */
+	bottom: 0px;
+	right: 0px;
+}
+
+.subtitle {
+	color: #C0C0C0;
+	font-size: 12pt;
+	border-bottom: 1px solid #404040;
+	margin-bottom: 10px;
+}
+
+/* popup support */
+
+#lean_overlay {
+	position: fixed;
+	z-index: 10000;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+	background : #000;
+	display: none;
+}
+
+div.popup {
+	display: none;
+	background: #FFFFFF;
+	border-radius: 5px;
+	box-shadow: 0 0 4px rgba(0, 0, 0, 0.7);
+	padding: 20px;
+	width: 400px;
+}
+
+div.popup h1 {
+	font-size: 16px;
+	border-bottom: 1px solid #C0C0C0;
+}
