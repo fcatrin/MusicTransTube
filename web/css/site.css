@@ -1,12 +1,12 @@
 html { 
-	padding:0px;
+	padding:20pt;
 	margin:0px;
 }
 
-BODY, SELECT, INPUT, TD, TH, A {
+BODY, SELECT, INPUT, TD, TH, A, DIV, BUTTON {
 	font-family: "Rambla";
-	font-size: 10pt;
-	color: #333333;
+	font-size: 12pt;
+	color: rgba(255, 255, 255, 0.7);
 }
 
 BODY {
@@ -75,4 +75,22 @@ button {
 
 button:hover {
 	background: rgba(70, 70, 70, 1);
+}
+
+#title {
+	font-size: 20pt;
+	font-weight:bold;
+}
+
+.legend {
+	font-size: 12pt;
+}
+
+A {
+	color: rgba(200, 200, 255, 0.8);
+	decoration:none;
+}
+
+A:hover {
+   color: rgba(200, 200, 255, 1);
 }

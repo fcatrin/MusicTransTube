@@ -9,6 +9,10 @@
 <script src="js/index.js" type="text/javascript"></script>
 </head>
 <body>
+<div id="title">MusicTrans "Tube"</div>
+<div class="legend">This only a demo of what these kind of applications can do for your practice and learning.<br >
+For a more <b>advanced audio tool</b>, check the original <a href="http://musictransapp.com">MusicTrans for Android, PC and Mac</a>.</div>
+<div class="legend">This application is designed to be used in a computer</div>
 <div id="box">
 	<div id="video">
 		<div id="videoContainer">
