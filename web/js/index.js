@@ -126,11 +126,13 @@ function onLoopEndPressed() {
 
 function onPlayPausePressed() {
 	var state = player.getPlayerState();
-	if (state == 1) {
+	var wasPlaying = state == 1;
+	if (wasPlaying) {
 		player.pauseVideo();
 	} else {
 		player.playVideo();
 	}
+	updateButtonPressed('#btnPlay', !wasPlaying);
 }
 
 function onMoveBackPressed() {
@@ -172,6 +174,19 @@ function displayLoopInfo() {
 	loopText += " ]";
 	
 	$('#loopText').text(loopText);
+	
+	updateButtonPressed('#btnLoopStart', loopStart >= 0);
+	updateButtonPressed('#btnLoopEnd', loopEnd >= 0);
+}
+
+function updateButtonPressed(selector, pressed) {
+	var element = $(selector);
+	var className = 'button-pressed';
+	if (pressed) {
+		element.addClass(className);
+	} else {
+		element.removeClass(className);
+	}
 }
 
 function updatePlaybackRates() {
@@ -188,6 +203,7 @@ function updatePlaybackRates() {
 	$('#rateButtons').html(html);
 	$('.btnRate').click(onButtonRatePressed);
 	$('#panelSpeed').show();
+	setSpeed(-1);
 }
 
 function getIndex(id) {
@@ -209,6 +225,11 @@ function setSpeed(index) {
 	var rate = rates[index];
 	player.setPlaybackRate(rate);
 	displaySpeedInfo(rateNames[index]);
+	
+	for(var i=0; i<rates.length; i++) {
+		var selector = '#btnRate-' + i;
+		updateButtonPressed(selector, i == index);
+	}
 }
 
 function displaySpeedInfo(speedText) {

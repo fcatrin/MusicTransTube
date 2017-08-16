@@ -10,9 +10,9 @@
 </head>
 <body>
 <div id="title">MusicTrans "Tube"</div>
-<div class="legend">This only a demo of what these kind of applications can do for your practice and learning.<br >
+<div class="legend">This only a demo of what this kind of applications can do for your music practice and learning.<br >
 For a more <b>advanced audio tool</b>, check the original <a href="http://musictransapp.com">MusicTrans for Android, PC and Mac</a>.</div>
-<div class="legend">This application is designed to be used in a computer</div>
+<div class="note">Note: This web application is designed to be used in a computer</div>
 <div class="legend input">
 YouTube URL <input type="text" name="txtUrl" id="txtUrl" />
 <button id="btnLoad">Load Video</button>

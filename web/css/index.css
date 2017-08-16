@@ -65,3 +65,12 @@
 #progressPanel {
 	display: none;
 }
+
+.note {
+	margin-top: 4pt;
+	margin-bottom: 4pt;
+}
+
+.button-pressed {
+	background: rgba(20, 20, 20, 0.9);
+}

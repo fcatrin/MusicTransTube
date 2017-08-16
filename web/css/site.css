@@ -101,3 +101,9 @@ input[type=text] {
 	border: 0px;
 	padding: 4pt;
 }
+
+.note {
+	font-size: 10pt;
+	color: rgba(255, 255, 255, 0.6);
+}
+	
