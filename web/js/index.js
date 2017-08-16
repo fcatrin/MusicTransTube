@@ -111,16 +111,16 @@ function updatePlayerInfo() {
 }
 
 function onLoopStartPressed() {
-	loopStart = loopStart >= 0 ? -1 : player.getCurrentTime();
-	if (loopStart>=0 && loopStart > loopEnd) {
+	loopStart = player.getCurrentTime();
+	if (loopStart > loopEnd) {
 		loopEnd = -1;
 	}
 	displayLoopInfo();
 }
 
 function onLoopEndPressed() {
-	loopEnd = loopEnd >= 0 ? -1 : player.getCurrentTime();
-	if (loopEnd>=0 && loopEnd < loopStart) {
+	loopEnd = player.getCurrentTime();
+	if (loopEnd < loopStart) {
 		loopStart = -1;
 	}
 	displayLoopInfo();
