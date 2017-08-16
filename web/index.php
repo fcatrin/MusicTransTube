@@ -2,17 +2,18 @@
 <html>
 <head>
 <?php include "include/htmldecl.php" ?>
+<title>MusicTrans "Tube"</title>
 <link rel="stylesheet" type="text/css" href="css/index.css" />
 <script src="http://www.youtube.com/iframe_api" type="text/javascript"></script>
 <script src="js/lib/jquery.leanModal.min.js" type="text/javascript"></script>
 <script src="js/mutv.js" type="text/javascript"></script>
-<script src="js/index.js" type="text/javascript"></script>
+<script src="js/index.js?v=1" type="text/javascript"></script>
 </head>
 <body>
 <div id="title">MusicTrans "Tube"</div>
-<div class="legend">This only a demo of what this kind of applications can do for your music practice and learning.<br >
+<div class="legend">This web application is only a demo of how can you improve your instrument practice and learning.<br >
 For a more <b>advanced audio tool</b>, check the original <a href="http://musictransapp.com">MusicTrans for Android, PC and Mac</a>.</div>
-<div class="note">Note: This web application is designed to be used in a computer</div>
+<div class="note">Note: This web application is designed to be used with a computer</div>
 <div class="legend input">
 YouTube URL <input type="text" name="txtUrl" id="txtUrl" />
 <button id="btnLoad">Load Video</button>
