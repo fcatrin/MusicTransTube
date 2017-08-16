@@ -22,6 +22,20 @@ YouTube URL <input type="text" name="txtUrl" id="txtUrl" />
 		<div id="videoDiv">Loading...</div>
 	</div>
 </div>
+<div id="progressPanel">
+	<div id="progressThumb">
+		<div id="thumb-w1" class="progressBar">&nbsp;</div>
+		<div id="thumb-w2" class="progressBar">&nbsp;</div>
+		<div id="thumb-w3" class="progressBar">&nbsp;</div>
+		<br clear="all" />
+	</div>
+	<div id="progressBars">
+		<div id="progress-w1" class="progressBar">&nbsp;</div>
+		<div id="progress-w2" class="progressBar">&nbsp;</div>
+		<div id="progress-w3" class="progressBar">&nbsp;</div>
+		<br clear="all" />
+	</div>
+</div>
 <div id="buttons">
 	<div id="panelNavigation">
 		<div id="loopText"></div>

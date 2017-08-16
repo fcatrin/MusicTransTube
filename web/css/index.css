@@ -28,3 +28,40 @@
 	margin-right: 4pt;
 	margin-top: 4pt;
 }
+
+#progressBars, #progressThumb {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#progressBars, .progressBar, #progressThumb {
+	height: 4pt;
+}
+
+.progressBar {
+	float: left;
+}
+
+#progress-w1 {
+	background: #61DC9D;
+}
+
+#progress-w2 {
+	background: #9C5D5D;
+}
+
+#progress-w3 {
+   background: #215D9C;
+}
+
+#thumb-w1, #thumb-w3 {
+   background: rgba(0, 0, 0, 0);
+}
+
+#thumb-w2 {
+   background: rgba(255, 255, 255, 0.8);
+}
+
+#progressPanel {
+	display: none;
+}

@@ -9,6 +9,9 @@ var videoExpanded = false;
 
 var VIDEO_WIDTH = 640;
 var VIDEO_HEIGHT = 390;
+var THUMB_WIDTH = 4;
+
+var currentVideoWidth = VIDEO_WIDTH;
 
 function onInit() {
 	$('#btnLoad').click(onLoadPressed);
@@ -102,6 +105,7 @@ function updatePlayerInfo() {
 			player.seekTo(loopStart, true);
 		}
 	}
+	updateProgress();
 }
 
 function onLoopStartPressed() {
@@ -226,9 +230,53 @@ function onExpandPressed() {
 			videoHeight = h;
 		}
 		player.setSize(videoWidth, videoHeight);
+		currentVideoWidth = videoWidth;
 	} else {
 		player.setSize(VIDEO_WIDTH, VIDEO_HEIGHT);
+		currentVideoWidth = VIDEO_WIDTH;
 	}
+	updateProgress();
+}
+
+function updateProgress() {
+	var timeTotal = player.getDuration();
+	
+	if (timeTotal == 0) return;
+	
+	$('#progressPanel').show();
+	
+	var currentPosition = player.getCurrentTime();
+	var width = currentVideoWidth;
+	var ratio = width / timeTotal;
+	
+	var w1 = Math.floor(currentPosition * ratio);
+	var t1 = w1;
+	var w2 = 0;
+	if (loopStart>=0 && loopEnd >=0) {
+		w2 = Math.floor((loopEnd - loopStart) * ratio);
+		w1 = Math.floor(loopStart * ratio);
+	}
+	var w3 = width - w1 - w2;
+	
+	/* thumb widhts */
+	var t2 = THUMB_WIDTH;
+	t1 = t1 - THUMB_WIDTH / 2;
+	if (t1 < 0 ) t1 = 0;
+	var t3 = width - t1 - t2;
+	if (t3 < 0) t3 = 0;
+	
+	$('#progressBars').css({width: width});
+	$('#progressThumb').css({width: width});
+	
+	
+	$('#progress-w1').css({width: w1});
+	$('#progress-w2').css({width: w2});
+	$('#progress-w3').css({width: w3});
+	
+	$('#thumb-w1').css({width: t1});
+	$('#thumb-w2').css({width: t2});
+	$('#thumb-w3').css({width: t3});
+
 }
 
 $( document ).ready(function() {
