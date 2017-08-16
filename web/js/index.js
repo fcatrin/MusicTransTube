@@ -5,6 +5,10 @@ var MOVE_SECONDS = 2;
 var rates;
 var rateNames;
 var ratesUpdated = false;
+var videoExpanded = false;
+
+var VIDEO_WIDTH = 640;
+var VIDEO_HEIGHT = 390;
 
 function onYouTubeIframeAPIReady() {
 	player = new YT.Player('videoDiv', {
@@ -28,7 +32,8 @@ function onPlayerReady(event) {
 	$('#btnLoopStart').click(onLoopStartPressed);
 	$('#btnLoopEnd')  .click(onLoopEndPressed);
 	
-	$('#btnReset')  .click(onResetPressed);
+	$('#btnReset') .click(onResetPressed);
+	$('#btnExpand').click(onExpandPressed);
 	
 	displayLoopInfo();
 	displaySpeedInfo('Normal');
@@ -52,6 +57,7 @@ function onKeyPress(e) {
 		case 97  : onMoveBackPressed();    break;
 		case 115 : onMoveForwardPressed(); break;
 		case 120 : onResetPressed(); break;
+		case 122 : onExpandPressed(); break;
 		}
 	}
 	console.log(e.which);
@@ -181,4 +187,24 @@ function setSpeed(index) {
 
 function displaySpeedInfo(speedText) {
 	$('#speedText').text('Speed: ' + speedText);
+}
+
+function onExpandPressed() {
+	videoExpanded = !videoExpanded;
+	if (videoExpanded) {
+		var ratio = VIDEO_WIDTH / VIDEO_HEIGHT;
+		var h = $(window).height() * 0.95;
+		var w = $(window).width() * 0.95;
+		var videoWidth = h * ratio;
+		var videoHeight = w / ratio;
+		
+		if (videoWidth > w) {
+			videoWidth = w;
+		} else if (videoHeight > h) {
+			videoHeight = h;
+		}
+		player.setSize(videoWidth, videoHeight);
+	} else {
+		player.setSize(VIDEO_WIDTH, VIDEO_HEIGHT);
+	}
 }
