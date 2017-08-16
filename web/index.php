@@ -13,6 +13,10 @@
 <div class="legend">This only a demo of what these kind of applications can do for your practice and learning.<br >
 For a more <b>advanced audio tool</b>, check the original <a href="http://musictransapp.com">MusicTrans for Android, PC and Mac</a>.</div>
 <div class="legend">This application is designed to be used in a computer</div>
+<div class="legend input">
+YouTube URL <input type="text" name="txtUrl" id="txtUrl" />
+<button id="btnLoad">Load Video</button>
+</div>
 <div id="video">
 	<div id="videoContainer">
 		<div id="videoDiv">Loading...</div>

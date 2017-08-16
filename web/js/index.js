@@ -10,6 +10,20 @@ var videoExpanded = false;
 var VIDEO_WIDTH = 640;
 var VIDEO_HEIGHT = 390;
 
+function onInit() {
+	$('#btnLoad').click(onLoadPressed);
+}
+
+function onLoadPressed() {
+	var url = $('#txtUrl').val();
+	var vars = getQueryVars(url);
+	if (vars!=null && vars['v'] != null) {
+		redirect('index.php?v=' + vars['v'] );
+	} else {
+		alert("Invalid YouTube URL, make sure that it includes the Video Id (v=....)");
+	}
+}
+
 function onYouTubeIframeAPIReady() {
 	player = new YT.Player('videoDiv', {
 		height: '390',
@@ -21,8 +35,13 @@ function onYouTubeIframeAPIReady() {
 	});
 }
 
-function onPlayerReady(event) {
+function onPlayerReady() {
 	var videoId = getQueryString('v');
+	if (videoId==null) return;
+	
+	var videoUrl = "https://www.youtube.com/watch?v=" + videoId;
+	$('#txtUrl').val(videoUrl);
+	
 	player.cueVideoById(videoId, 0, 'large');
 	
 	$('#btnBack').click(onMoveBackPressed);
@@ -41,6 +60,9 @@ function onPlayerReady(event) {
 	setInterval(updatePlayerInfo, 250);
 	
 	$(document).keypress(onKeyPress);
+	
+	$('#video').show();
+	$('#buttons').show();
 }
 
 function onKeyPress(e) {
@@ -208,3 +230,7 @@ function onExpandPressed() {
 		player.setSize(VIDEO_WIDTH, VIDEO_HEIGHT);
 	}
 }
+
+$( document ).ready(function() {
+    onInit();
+});

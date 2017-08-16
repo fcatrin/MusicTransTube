@@ -18,3 +18,13 @@
 #panelSpeed {
 	display: none;
 }
+
+#video, #buttons {
+	display: none;
+}
+
+#txtUrl {
+	width: 300pt;
+	margin-right: 4pt;
+	margin-top: 4pt;
+}

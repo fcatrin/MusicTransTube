@@ -94,3 +94,10 @@ A {
 A:hover {
    color: rgba(200, 200, 255, 1);
 }
+
+input[type=text] {
+	background: rgba(90, 90, 90, 0.8);
+	border-radius: 4pt;
+	border: 0px;
+	padding: 4pt;
+}

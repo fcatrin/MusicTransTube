@@ -10,9 +10,9 @@ function getQueryString(key) {
 	return querystring[key];
 }
 
-function updateQueryString() {
+function getQueryVars(url) {
 	var vars = [], hash;
-	var q = document.URL.split('?')[1];
+	var q = url.split('?')[1];
 	if(q != undefined){
 		q = q.split('&');
 		for(var i = 0; i < q.length; i++){
@@ -21,7 +21,11 @@ function updateQueryString() {
 			vars[hash[0]] = hash[1];
 		}
 	}
-	querystring = vars;
+	return vars;
+}
+
+function updateQueryString() {
+	querystring = getQueryVars(document.URL);
 }
 
 function hasQueryString(key) {
