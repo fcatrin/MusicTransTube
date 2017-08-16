@@ -23,6 +23,7 @@ YouTube URL <input type="text" name="txtUrl" id="txtUrl" />
 	</div>
 </div>
 <div id="progressPanel">
+	<div id="elapsedText"></div>
 	<div id="progressThumb">
 		<div id="thumb-w1" class="progressBar">&nbsp;</div>
 		<div id="thumb-w2" class="progressBar">&nbsp;</div>

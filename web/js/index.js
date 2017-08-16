@@ -11,6 +11,8 @@ var VIDEO_WIDTH = 640;
 var VIDEO_HEIGHT = 390;
 var THUMB_WIDTH = 4;
 
+var SECONDS_HOUR = 3600;
+
 var currentVideoWidth = VIDEO_WIDTH;
 
 function onInit() {
@@ -156,9 +158,11 @@ function onResetPressed() {
 }
 
 function displayLoopInfo() {
+	var showHour = player.getDuration() >= SECONDS_HOUR;
+	
 	var loopText = "Loop [ ";
 	if (loopStart >= 0) {
-		loopText += seconds2text(loopStart);
+		loopText += seconds2text(loopStart, showHour);
 	} else {
 		loopText += "N";
 	}
@@ -166,7 +170,7 @@ function displayLoopInfo() {
 	loopText += " -> ";
 	
 	if (loopEnd >= 0) {
-		loopText += seconds2text(loopEnd);
+		loopText += seconds2text(loopEnd, showHour);
 	} else {
 		loopText += "N";
 	}
@@ -267,6 +271,9 @@ function updateProgress() {
 	$('#progressPanel').show();
 	
 	var currentPosition = player.getCurrentTime();
+	var timeText = seconds2text(currentPosition, timeTotal >= SECONDS_HOUR);
+	$('#elapsedText').text(timeText);
+
 	var width = currentVideoWidth;
 	var ratio = width / timeTotal;
 	

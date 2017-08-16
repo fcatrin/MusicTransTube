@@ -1,4 +1,4 @@
-function seconds2text(time) {
+function seconds2text(time, showHour) {
 	var fraction = time - Math.floor(time);
 	
 	var hours = Math.floor(time / 3600);
@@ -8,7 +8,9 @@ function seconds2text(time) {
 	time = time - minutes * 60;
 	
 	var seconds = Math.floor(time);
-	var ms      = Math.floor(fraction * 2);
+	var ms      = Math.floor(fraction * 100);
 	
-	return padz(hours,2) + ":" + padz(minutes, 2) + ":" + padz(seconds, 2) + "." + padz(ms,2);
+	var text = showHour ? (padz(hours,2) + ":") : ''; 
+	
+	return text + padz(minutes, 2) + ":" + padz(seconds, 2) + "." + padz(ms,2);
 }

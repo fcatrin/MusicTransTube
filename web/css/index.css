@@ -74,3 +74,8 @@
 .button-pressed {
 	background: rgba(20, 20, 20, 0.9);
 }
+
+#elapsedText {
+	font-family: "Lucida Console", Monaco, monospace, "Courier New", Courier; 
+	font-size: 10pt;
+}
