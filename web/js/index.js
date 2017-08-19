@@ -21,12 +21,25 @@ function onInit() {
 
 function onLoadPressed() {
 	var url = $('#txtUrl').val();
-	var vars = getQueryVars(url);
-	if (vars!=null && vars['v'] != null) {
-		redirect('index.php?v=' + vars['v'] );
+	var videoId = '';
+	if (url.startsWith('https://youtu.be')) {
+		var parts = url.split('/');
+		if (parts.length != 4) {
+			alert("Invalid YouTube URL");
+			return;
+		} else {
+			videoId = parts[3];
+		}
 	} else {
-		alert("Invalid YouTube URL, make sure that it includes the Video Id (v=....)");
+		var vars = getQueryVars(url);
+		if (vars==null || vars['v'] == null) {
+			alert("Invalid YouTube URL, make sure that it includes the Video Id (v=....)");	
+			return;
+		} else {
+			videoId = vars['v'];
+		}
 	}
+	redirect('index.php?v=' + videoId );
 }
 
 function onYouTubeIframeAPIReady() {

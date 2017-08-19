@@ -7,7 +7,7 @@
 <script src="http://www.youtube.com/iframe_api" type="text/javascript"></script>
 <script src="js/lib/jquery.leanModal.min.js" type="text/javascript"></script>
 <script src="js/mutv.js" type="text/javascript"></script>
-<script src="js/index.js?v=1" type="text/javascript"></script>
+<script src="js/index.js?v=2" type="text/javascript"></script>
 </head>
 <body>
 <div id="title">MusicTrans "Tube"</div>
